@@ -2,7 +2,8 @@
 const pageBackground = document.getElementById('layout')
 const HeaderTitle = document.getElementById('headerTitle')
 const Squares = document.querySelectorAll('.square')
-const NewGameButton = document.getElementById('newGameButton')
+const NewGameButton = document.querySelector('.newGameButton')
+const VictoryPopUp = document.getElementById('VictoryPopUp')
 let currentPlayer, newGame
 let Victory = false
 
@@ -72,6 +73,7 @@ class TicTacToe {
         //Checks if that was a winning move. 
         if (this.checkVictory()){
             Victory = true
+            VictoryPopUp.style.display = 'block'
             console.log(`${currentPlayer.name} WON!`)
             console.log(currentPlayer.previousMoves)
             currentPlayer.previousMoves.forEach((square)=>{
