@@ -73,7 +73,7 @@ class TicTacToe {
         //Checks if that was a winning move. 
         if (this.checkVictory()){
             Victory = true
-            VictoryPopUp.style.display = 'block'
+            VictoryPopUp.classList.add('show')
             console.log(`${currentPlayer.name} WON!`)
             console.log(currentPlayer.previousMoves)
             currentPlayer.previousMoves.forEach((square)=>{
@@ -102,7 +102,8 @@ class TicTacToe {
         for (let square of Squares) {
             square.innerHTML = ''
             square.classList.remove('forgetting')
-            square.classList.remove('winner')
+            square.classList.remove('win')
+            VictoryPopUp.classList.remove('show')
         }
 
         //Defining starting player at random

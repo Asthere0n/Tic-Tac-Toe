@@ -2,12 +2,15 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    color: white;
 }
-a:link, a:visited, a:hover{
+
+a:link,
+a:visited,
+a:hover {
     text-decoration: none;
     color: white;
 }
+
 .newGameButton {
     color: white;
     padding: 30px;
@@ -22,6 +25,7 @@ a:link, a:visited, a:hover{
     text-transform: uppercase;
     font-size: 28px;
 }
+
 .newGameButton:hover {
     background-color: white;
     color: black;
@@ -41,19 +45,50 @@ a:link, a:visited, a:hover{
     background-color: #255957;
 }
 
-#VictoryPopUp{
+#VictoryPopUp {
     display: none;
-    height: 100vh;
-    width: 100%;
-    img{
-        height: 200px;
-    }
+    /* Inicialmente oculto */
+    position: fixed;
+    /* Fijo en la pantalla */
+    top: 50%;
+    /* Centrado verticalmente */
+    left: 50%;
+    /* Centrado horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajuste para centrar */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro */
+    color: white;
+    /* Texto blanco */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    text-align: center;
+    z-index: 1000;
 }
 
-.Player1Turn{
+#VictoryPopUp img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#VictoryPopUp p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.show {
+    display: block !important;
+    background-color: purple;
+}
+
+.Player1Turn {
     background-color: red;
 }
-.Player2Turn{
+
+.Player2Turn {
     background-color: blue;
 }
 
@@ -75,14 +110,14 @@ header {
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 120px;
         text-transform: uppercase;
-        
+
     }
 
     div {
         flex-grow: 1;
     }
 
-    
+
 }
 
 #board {
@@ -112,43 +147,45 @@ header {
     .forgetting {
         color: rgba(0, 0, 0, 0.3);
     }
-    .win{
+
+    .win {
         background-color: green !important;
     }
 
-    #A1 {
-        grid-area: 'A1';
-    }
+}
 
-    #A2 {
-        grid-area: 'A2';
-    }
+#A1 {
+    grid-area: 'A1';
+}
 
-    #A3 {
-        grid-area: 'A3';
-    }
+#A2 {
+    grid-area: 'A2';
+}
 
-    #B1 {
-        grid-area: 'B1';
-    }
+#A3 {
+    grid-area: 'A3';
+}
 
-    #B2 {
-        grid-area: 'B2';
-    }
+#B1 {
+    grid-area: 'B1';
+}
 
-    #B3 {
-        grid-area: 'B3';
-    }
+#B2 {
+    grid-area: 'B2';
+}
 
-    #C1 {
-        grid-area: 'C1';
-    }
+#B3 {
+    grid-area: 'B3';
+}
 
-    #C2 {
-        grid-area: 'C2';
-    }
+#C1 {
+    grid-area: 'C1';
+}
 
-    #C3 {
-        grid-area: 'C3';
-    }
+#C2 {
+    grid-area: 'C2';
+}
+
+#C3 {
+    grid-area: 'C3';
 }

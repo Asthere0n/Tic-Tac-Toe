@@ -3,6 +3,34 @@
   margin: 0;
   text-decoration: none;
 }
+a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+.newGameButton {
+  color: white;
+  padding: 30px;
+  margin: 12px;
+  margin-right: 40px;
+  border: 2px white solid;
+  border-radius: 25px;
+  box-shadow: 0px 0px 18px #ffffff inset;
+  line-height: 0px;
+  background-color: transparent;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.newGameButton:hover {
+  background-color: white;
+  color: black;
+  mix-blend-mode: lighten;
+}
+.newGameButton:active {
+  scale: 0.9;
+}
 #layout {
   height: 100vh;
   display: flex;
@@ -10,6 +38,41 @@
   flex-wrap: nowrap;
   align-items: center;
   background-color: #255957;
+}
+#VictoryPopUp {
+  display: none;
+  /* Inicialmente oculto */
+  position: fixed;
+  /* Fijo en la pantalla */
+  top: 50%;
+  /* Centrado verticalmente */
+  left: 50%;
+  /* Centrado horizontalmente */
+  transform: translate(-50%, -50%);
+  /* Ajuste para centrar */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Fondo oscuro */
+  color: white;
+  /* Texto blanco */
+  padding: 20px;
+  /* Espaciado interno */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  text-align: center;
+  z-index: 1000;
+}
+#VictoryPopUp img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#VictoryPopUp p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+.show {
+  display: block !important;
+  background-color: purple;
 }
 .Player1Turn {
   background-color: red;
@@ -37,28 +100,6 @@ header h1 {
 header div {
   flex-grow: 1;
 }
-header button {
-  color: white;
-  padding: 30px;
-  margin: 12px;
-  margin-right: 40px;
-  border: 2px white solid;
-  border-radius: 25px;
-  box-shadow: 0px 0px 18px #ffffff inset;
-  line-height: 0px;
-  background-color: transparent;
-  transition: all 0.2s;
-  text-transform: uppercase;
-  font-size: 28px;
-}
-header button:hover {
-  background-color: white;
-  color: black;
-  mix-blend-mode: lighten;
-}
-header button:active {
-  scale: 0.9;
-}
 #board {
   display: grid;
   border: 4px black solid;
@@ -82,30 +123,33 @@ header button:active {
 #board .forgetting {
   color: rgba(0, 0, 0, 0.3);
 }
-#board #A1 {
+#board .win {
+  background-color: green !important;
+}
+#A1 {
   grid-area: 'A1';
 }
-#board #A2 {
+#A2 {
   grid-area: 'A2';
 }
-#board #A3 {
+#A3 {
   grid-area: 'A3';
 }
-#board #B1 {
+#B1 {
   grid-area: 'B1';
 }
-#board #B2 {
+#B2 {
   grid-area: 'B2';
 }
-#board #B3 {
+#B3 {
   grid-area: 'B3';
 }
-#board #C1 {
+#C1 {
   grid-area: 'C1';
 }
-#board #C2 {
+#C2 {
   grid-area: 'C2';
 }
-#board #C3 {
+#C3 {
   grid-area: 'C3';
 }
