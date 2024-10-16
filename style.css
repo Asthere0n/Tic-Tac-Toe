@@ -3,6 +3,9 @@
   margin: 0;
   text-decoration: none;
 }
+a {
+  color: white;
+}
 #layout {
   height: 100vh;
   display: flex;
