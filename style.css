@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+#layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: red;
+}
+header {
+  width: 100%;
+  display: flex;
+  height: 80px;
+  margin-block: 20px;
+  overflow: hidden;
+}
+header h1 {
+  flex-grow: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 120px;
+  text-transform: uppercase;
+}
+header div {
+  flex-grow: 1;
+}
+header button {
+  color: white;
+  padding: 30px;
+  margin: 12px;
+  margin-right: 40px;
+  border: 2px white solid;
+  border-radius: 25px;
+  box-shadow: 0px 0px 18px #ffffff inset;
+  line-height: 0px;
+  background-color: transparent;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+header button:hover {
+  background-color: white;
+  color: red;
+}
+header button:active {
+  scale: 0.9;
+}
+#board {
+  display: grid;
+  border: 4px black solid;
+  grid-template-areas: "A1 A2 A3" "B1 B2 B3" "C1 C2 C3";
+}
+#board .square {
+  border: 4px black solid;
+  width: 150px;
+  height: 150px;
+  font-size: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  background-color: white;
+}
+#board .square:hover {
+  background-color: #ccc;
+}
+#board .forgetting {
+  color: rgba(0, 0, 0, 0.3);
+}
+#board #A1 {
+  grid-area: 'A1';
+}
+#board #A2 {
+  grid-area: 'A2';
+}
+#board #A3 {
+  grid-area: 'A3';
+}
+#board #B1 {
+  grid-area: 'B1';
+}
+#board #B2 {
+  grid-area: 'B2';
+}
+#board #B3 {
+  grid-area: 'B3';
+}
+#board #C1 {
+  grid-area: 'C1';
+}
+#board #C2 {
+  grid-area: 'C2';
+}
+#board #C3 {
+  grid-area: 'C3';
+}
