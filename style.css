@@ -9,7 +9,13 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+  background-color: #255957;
+}
+.Player1Turn {
   background-color: red;
+}
+.Player2Turn {
+  background-color: blue;
 }
 header {
   width: 100%;
@@ -47,7 +53,8 @@ header button {
 }
 header button:hover {
   background-color: white;
-  color: red;
+  color: black;
+  mix-blend-mode: lighten;
 }
 header button:active {
   scale: 0.9;
