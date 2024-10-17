@@ -2,7 +2,7 @@
 const pageBackground = document.getElementById('layout')
 const HeaderTitle = document.getElementById('headerTitle')
 const Squares = document.querySelectorAll('.square')
-const NewGameButton = document.querySelector('.newGameButton')
+const NewGameButton = document.querySelectorAll('.newGameButton')
 const VictoryPopUp = document.getElementById('VictoryPopUp')
 let currentPlayer, newGame
 let Victory = false
@@ -74,6 +74,9 @@ class TicTacToe {
         if (this.checkVictory()){
             Victory = true
             VictoryPopUp.classList.add('show')
+            pageBackground.style.backgroundColor = '#f8ba00'
+            HeaderTitle.innerHTML = "//GAME OVER"
+            HeaderTitle.style.color = "black"
             console.log(`${currentPlayer.name} WON!`)
             console.log(currentPlayer.previousMoves)
             currentPlayer.previousMoves.forEach((square)=>{
@@ -96,6 +99,7 @@ class TicTacToe {
     startNewGame() {
         console.log('New Game started')
         Victory=false
+        HeaderTitle.style.color = "white"
         newGame = new TicTacToe
 
         //Resetting the board
@@ -119,9 +123,11 @@ class TicTacToe {
 }
 
 //Launching the game when pressing New Game Button
-NewGameButton.addEventListener('click', () => {
-    newGame = new TicTacToe
-    newGame.startNewGame()
+NewGameButton.forEach((button) => {
+    button.addEventListener('click', () => {
+        newGame = new TicTacToe
+        newGame.startNewGame()
+    })
 })
 
 //Making a move

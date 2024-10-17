@@ -46,24 +46,16 @@ a:hover {
 }
 
 #VictoryPopUp {
-    display: none;
-    /* Inicialmente oculto */
+    display: block;
+    visibility: hidden;
     position: fixed;
-    /* Fijo en la pantalla */
     top: 50%;
-    /* Centrado verticalmente */
     left: 50%;
-    /* Centrado horizontalmente */
     transform: translate(-50%, -50%);
-    /* Ajuste para centrar */
     background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo oscuro */
     color: white;
-    /* Texto blanco */
     padding: 20px;
-    /* Espaciado interno */
     border-radius: 10px;
-    /* Bordes redondeados */
     text-align: center;
     z-index: 1000;
 }
@@ -80,7 +72,7 @@ a:hover {
 }
 
 .show {
-    display: block !important;
+    visibility: visible !important;
     background-color: purple;
 }
 
