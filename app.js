@@ -6,8 +6,30 @@ const NewGameButton = document.querySelectorAll('.newGameButton')
 const VictoryPopUp = document.getElementById('VictoryPopUp')
 let currentPlayer, newGame
 let Victory = false
+let currentTurn = 0
 
+//Timer features
+//First, setting the countdown to 10 at the start of every turn
+function resetCountdown () {
+    console.log('Timer reset')
+    const timer = document.querySelector('#timer')
+    timer.innerHTML = ''
+    for (let i=0; i < 10; i++){
+        const partition = document.createElement('div')
+        partition.classList.add('countdownPartition')
+        timer.appendChild(partition)
+    }
+    currentTurn++
+}
 
+function timerCountdown(){
+    const timerPartitions = document.querySelectorAll('.countdownPartition')
+    timerPartitions.forEach((second, index) => {
+        setTimeout(() =>{
+            second.remove()
+        } , 1000*index)
+    });
+}
 
 //Player class
 class Player {
@@ -30,6 +52,10 @@ class Player {
         if (this.previousMoves.length === 3) {
             this.previousMoves[0].classList.add('forgetting')
         }
+
+        //Reset the timer
+        resetCountdown()
+        timerCountdown()
     }
 }
 
