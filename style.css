@@ -145,3 +145,18 @@ header div {
 #C3 {
   grid-area: 'C3';
 }
+#timer {
+  margin-top: 30px;
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px white inset;
+  border: 4px #053500 solid;
+  display: flex;
+  justify-content: flex-start;
+}
+#timer div {
+  width: 10%;
+  background-color: green;
+  opacity: 50%;
+}
